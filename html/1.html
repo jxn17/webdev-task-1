@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Udaipur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('udaipur1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Title */
+        .title {
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-family: 'Open Sans', sans-serif;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Container for the boxes */
+        .box-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 250px;
+        }
+
+        /* Style for each box */
+        .box {
+            width: 200px;
+            aspect-ratio: 4 / 3; /* Maintain image aspect ratio */
+            border: 4px solid #FF5733; /* Bold color for the outline */
+            border-radius: 10px;
+            background-size: cover; /* Ensures image fills the box */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Overlay behind modal */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">UDAIPUR</h1>
+
+    <div class="box-container">
+        <div class="box" style="background-image: url('udp history.jpg');" onclick="openModal('modal1')">HISTORY</div>
+        <div class="box" style="background-image: url('udp2.jpg');" onclick="openModal('modal2')">TOURISM</div>
+        <div class="box" style="background-image: url('udp3.jpg');" onclick="openModal('modal3')">CAFES</div>
+        <div class="box" style="background-image: url('car rental.jpg');" onclick="openModal('modal4')">RENTALS</div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+    <!-- Modal 1 -->
+    <div class="modal" id="modal1">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>History</h2>
+        <p>
+            Udaipur, often called the "City of Lakes," is a historic city in the Indian state of Rajasthan. It was founded in 1559 by Maharana Udai Singh II, the ruler of the Mewar Kingdom, after he moved his capital from Chittorgarh due to its repeated sieges by the Mughal emperor Akbar. Legend has it that a holy sage advised Maharana Udai Singh II to establish the city on the banks of Lake Pichola for its strategic location and natural beauty.
+        <p></p>
+            Key Historical Highlights:
+            <p></p>Mewar Dynasty: Udaipur became the new capital of the Mewar Kingdom, known for its resistance against Mughal domination and its commitment to Rajput honor.
+            <p></p>Battle and Alliances: The city witnessed significant struggles between the Mewars and the Mughals. Maharana Pratap, a legendary figure of Mewar, valiantly fought in the Battle of Haldighati (1576) against Akbar's forces.
+            <p></p>Architectural Flourish: Under the Mewar rulers, Udaipur flourished as a center of art, culture, and architecture. Iconic structures like the City Palace, Lake Palace, and Jagdish Temple were built.
+            <p></p>British Protectorate: In the 19th century, Udaipur became a princely state under British India, maintaining its internal sovereignty while aligning with the British Raj.
+            <p></p>Post-Independence: After Indian independence in 1947, Udaipur became part of Rajasthan. Its royal family retained a ceremonial role, while the city transitioned into a popular tourist destination.
+            <p></p>Udaipur Today:
+            Known for its serene lakes, palaces, and vibrant culture, Udaipur is a major tourist hub and a symbol of Rajasthan's rich heritage. It retains its charm as a cultural and historical treasure..</p>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal" id="modal2">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Top 5 places to visit</h2>
+        <p><a href="https://maps.app.goo.gl/S7jAfZrYyySfaKU16" target="_blank" style="color: #FF5733; text-decoration: underline;">City Palace</a>  
+        <p></p><a href="https://maps.app.goo.gl/e8BKpSZPX1XEw5zbA" target="_blank" style="color: #FF5733; text-decoration: underline;">Lake Pichola</a> 
+        <p></p><a href="https://maps.app.goo.gl/uAwJ6xBfqZeRbgw6A" target="_blank" style="color: #FF5733; text-decoration: underline;">Jag Mandir</a> 
+        <p></p><a href=https://maps.app.goo.gl/pMoqnwGy8Xt7As2z5" target="_blank" style="color: #FF5733; text-decoration: underline;">Sajjangarh Palace (Monsoon Palace) </a> 
+        <p></p><a href="https://maps.app.goo.gl/VYZpSD6mudydYVAJ9" target="_blank" style="color: #FF5733; text-decoration: underline;">Jagdish Temple</a>
+    </p>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal" id="modal3">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Top 5 cafes to YOM NOM in</h2>
+        <p><a href="https://maps.app.goo.gl/e111aQGsz1WtbsTUA" target="_blank" style="color: #FF5733; text-decoration: underline;">Cafe Lakeview</a>
+        <p></p><a href="https://maps.app.goo.gl/yafJgZDquGPhA4B66" target="_blank" style="color: #FF5733; text-decoration: underline;">Ambrai Cafe</a>
+        <p></p><a href="https://maps.app.goo.gl/Fuf19JfEHqZej8qi6" target="_blank" style="color: #FF5733; text-decoration: underline;">Jheel's Ginger Coffee Bar & Bakery</a>
+        <p></p><a href="https://maps.app.goo.gl/Xw1AuNAeSShjjCDe7" target="_blank" style="color: #FF5733; text-decoration: underline;">Botanical cafe</a>
+        <p></p><a href="https://maps.app.goo.gl/DFDFLeyQpsT2koNb9" target="_blank" style="color: #FF5733; text-decoration: underline;">The Peacock</a>
+        </p>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal" id="modal4">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>3 places you can rent vehicles</h2>
+        <p>1. <a href="https://maps.app.goo.gl/V17i4rRrVxzrCQ4u9" target="_blank" style="color: #FF5733; text-decoration: underline;">Jack Lee Rent A Car and Self Drive Car</a>
+        <p></p>2. <a href="https://maps.app.goo.gl/sZ1WNcHPibmnYcvV8" target="_blank" style="color: #FF5733; text-decoration: underline;">Self Drive Rental Carwale udaipur</a>  
+        <p></p>3. <a href="https://maps.app.goo.gl/UFBC8ptQrgSdY4qB9" target="_blank" style="color: #FF5733; text-decoration: underline;">GVW Rent A Car </a></p>
+    </div>
+
+    <script>
+        // Open the modal
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('active'));
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
